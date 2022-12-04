@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Выбор рейса</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="body_container container__admin">
+    <header class="admin-header"></header>
+    <main>
+        <div class="container mt-5">
+            <form action="/admin" method="post" enctype='multipart/form-data'>
+                <input type="date" name="flight_date" placeholder="Enter flight date" class="form-control form-control-lg mb-1">
+                <input type="time" step="2" name="departure_time" placeholder="Enter departure time" class="form-control form-control-lg mb-1">
+                <input type="text" name="departure_from" placeholder="Enter departure from" class="form-control form-control-lg mb-1">
+                <input type="time" step="2" name="arrival_time" placeholder="Enter arrival time" class="form-control form-control-lg mb-1">
+                <input type="text" name="arrival_to" placeholder="Enter arrival to" class="form-control form-control-lg mb-1">
+                <input type="number" step="0.01" name="flight_cost" placeholder="Enter cost" class="form-control form-control-lg mb-1">
+                <button type="submit" class="btn btn-success">Add Flight</button>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,290 @@
+/*abstract*/
+/*base*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", Verdana, sans-serif;
+  height: 100%;
+}
+
+.container__home {
+  height: 100vh;
+  background: url(/assets/img/plane2.jpg) no-repeat center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.body_container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main {
+  padding-bottom: 60px;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+}
+
+.button_dark {
+  background-color: #132C64;
+  color: #ffffff;
+}
+.button_dark:hover {
+  background-color: #061C4D;
+}
+
+.account_button {
+  width: 122px;
+  height: 38px;
+}
+
+.cost_button {
+  width: 242px;
+  height: 74px;
+  font-size: 22px;
+}
+
+.ticket_form {
+  width: 784px;
+  height: 234px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.journey_group {
+  width: 240px;
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket_form__box {
+  position: relative;
+  padding: 22px 4px 8px;
+  width: 240px;
+  height: 62px;
+  background-color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #132C64;
+  border-radius: 5px;
+}
+
+.form__button {
+  width: 784px;
+  height: 62px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 2.109rem;
+  color: white;
+}
+
+.journey_type {
+  display: flex;
+  align-items: center;
+}
+
+.journey_type__radiobutton {
+  width: 23px;
+  height: 23px;
+}
+.journey_type__radiobutton:checked {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  border: 8px solid #132C64;
+}
+
+.radiobutton_label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 2.109rem;
+  color: black;
+  margin-left: 10px;
+}
+
+.ticket_input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.109rem;
+  color: black;
+}
+
+.ticket_label {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.109rem;
+  color: #38486C;
+}
+
+/*layouts*/
+.wrapper {
+  margin: 0 auto;
+  width: calc(100% - 380px);
+}
+
+.header__wrapper {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__wrapper {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: sticky;
+  width: 100%;
+  height: 60px;
+  background-color: #F6CDE9;
+  box-shadow: 0px 4px 4px rgba(29, 37, 83, 0.4);
+  z-index: 1;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #F6CDE9;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2.109rem;
+  color: #0C1E49;
+  box-shadow: 0px -4px 4px rgba(29, 37, 83, 0.25);
+  margin-top: 46vh;
+}
+
+.nav__wrapper {
+  display: flex;
+  background-color: #132C64;
+  height: 60px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.109rem;
+  color: black;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav_link {
+  color: white;
+  margin-right: 40px;
+} /*components*/
+.intro {
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro__box {
+  padding: 50px;
+  width: 884px;
+  height: 334px;
+  background: rgba(255, 224, 245, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.choose {
+  margin-top: 28px;
+}
+
+.departure_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #132C64;
+  width: 125px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+}
+
+.flight_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 28px;
+  background-color: #F6CDE9;
+  width: 1156px;
+  height: 120px;
+  border-radius: 10px;
+}
+.flight_box:last-child {
+  margin-bottom: 28px;
+}
+
+.time_town {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 125px;
+  height: 74px;
+  background-color: #FFF8F8;
+  border-radius: 10px;
+  color: #132C64;
+}
+
+.flight_time {
+  font-size: 22px;
+}
+
+.flight_town {
+  font-size: 17px;
+}
+
+.airline {
+  color: #132C64;
+  font-size: 22px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,54 @@
+.choose {
+  margin-top: 28px;
+}
+
+.departure_date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-button-dark;
+  width: 125px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+}
+
+.flight_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 28px;
+  background-color: $color-background-pink;
+  width: 1156px;
+  height: 120px;
+  border-radius: 10px;
+
+  &:last-child {
+    margin-bottom: 28px;
+  }
+}
+
+.time_town {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 125px;
+  height: 74px;
+  background-color: $color-pink-light;
+  border-radius: 10px;
+  color: $color-button-dark;
+}
+
+.flight_time {
+  font-size: 22px;
+}
+
+.flight_town {
+  font-size: 17px;
+}
+
+.airline {
+  color: $color-button-dark;
+  font-size: 22px;
+}

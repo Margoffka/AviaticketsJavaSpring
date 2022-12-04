@@ -1,0 +1,17 @@
+.nav__wrapper {
+  display: flex;
+  background-color: $color-button-dark;
+  height: 60px;
+  align-items: center;
+  @include font ($size: 1.8rem);
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav_link {
+  color: white;
+  margin-right: 40px;
+}

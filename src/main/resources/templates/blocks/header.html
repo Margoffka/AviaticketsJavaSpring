@@ -1,0 +1,15 @@
+<div th:fragment="header" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="wrapper header__wrapper">
+        <div class="logo">
+            <a href="/"><img src="/assets/logo/Logo.svg" alt=""></a>
+        </div>
+<!--        <p sec:authorize="isAuthenticated()">аывфдлаоыфааолфыдаоыфлдаыфоа</p>-->
+        <div sec:authorize="!isAuthenticated()" class="account">
+            <a th:href="'/login'"><button class="button button_dark account_button">Вход</button></a>
+        </div>
+        <p sec:authorize="hasRole('ADMIN')">jsalkdfjas;lkfsjdfklsafjsalkdf;sd</p>
+        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" th:method="POST">
+            <input class="nav-link active border-warning" type="submit" value="Logout">
+        </form>
+    </div>
+</div>

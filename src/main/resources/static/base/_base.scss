@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', Verdana, sans-serif;
+    height: 100%;
+}
+
+
+.container__home {
+    height: 100vh;
+    background: url(/assets/img/plane2.jpg) no-repeat center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.body_container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.main {
+    padding-bottom: 60px;
+}

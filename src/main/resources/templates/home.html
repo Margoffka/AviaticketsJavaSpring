@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Выбор рейса</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="body_container container__home">
+    <header th:insert="blocks/header :: header" class="header"></header>
+
+    <main class="main">
+        <section class="intro">
+            <div class="wrapper intro__wrapper">
+                <div class="intro__box">
+                    <form th:action="@{/chooseByAttributes}" method="get" class="ticket_form">
+<!--                        <div class="journey_group">-->
+<!--                            <div class="journey_type">-->
+<!--                                <input type="radio" class="journey_type__radiobutton" id="journey-radiobutton-1"-->
+<!--                                       name="journey-type" value="one_direction">-->
+<!--                                <label for="journey-radiobutton-1" class="radiobutton_label">В одну сторону</label>-->
+<!--                            </div>-->
+<!--                            <div class="journey_type">-->
+<!--                                <input type="radio" class="journey_type__radiobutton" id="journey-radiobutton-2"-->
+<!--                                       name="journey-type" value="back_and_forth">-->
+<!--                                <label for="journey-radiobutton-2" class="radiobutton_label">Туда-обратно</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="ticket_form__box">
+                            <label for="ticket-input-from" class="ticket_label">Откуда</label>
+                            <input type="text" class="ticket_input" id="ticket-input-from" name="input_departure_from">
+                        </div>
+                        <div class="ticket_form__box">
+                            <label for="ticket-input-where" class="ticket_label">Куда</label>
+                            <input type="text" class="ticket_input" id="ticket-input-where" name="input_arrival_to">
+                        </div>
+<!--                        <div class="ticket_form__box">-->
+<!--                            <label for="ticket-input-type" class="ticket_label">Пассажиры</label>-->
+<!--                            <input type="text" class="ticket_input" id="ticket-input-type" value="1, Взрослый">-->
+<!--                        </div>-->
+                        <div class="ticket_form__box">
+                            <label for="ticket-input-date1" class="ticket_label">Дата вылета</label>
+                            <input type="date" class="ticket_input" id="ticket-input-date1" name="input_date">
+                        </div>
+<!--                        <div class="ticket_form__box">-->
+<!--                            <label for="ticket-input-date2" class="ticket_label">Дата куда</label>-->
+<!--                            <input type="date" class="ticket_input" id="ticket-input-date2">-->
+<!--                        </div>-->
+                       <input type="submit" class="button button_dark form__button" value="Найти билеты"></input>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer th:insert="blocks/footer :: footer" class="footer"></footer>
+</div>
+</body>
+</html>

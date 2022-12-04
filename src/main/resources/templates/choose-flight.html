@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="body_container">
+    <header th:insert="blocks/header :: header" class="header"></header>
+    <main class="main">
+        <nav class="wrapper nav__wrapper" th:insert="blocks/fabs :: fabs"></nav>
+        <section class="choose">
+            <div class="wrapper">
+<!--                <div th:each="el : ${flights}" class="flight_date departure_date">-->
+<!--                </div>-->
+                <div th:each="el : ${flights}" class="flight_box">
+                    <div th:text="${el.flightDate}" class="flight_date departure_date"></div>
+
+                    <div class="time_town time_town_departure">
+                        <div th:text="${el.departureTime}" class="flight_time time_departure"></div>
+                        <div th:text="${el.departureFrom}" class="flight_town town_departure"></div>
+                    </div>
+                    <div class="dots_line">
+                        <img src="/assets/svg/line_with_drops.svg" alt="">
+                    </div>
+                    <div class="time_town time_town_arrival">
+                        <div th:text="${el.arrivalTime}" class="flight_time time_arrival"></div>
+                        <div th:text="${el.arrivalTo}" class="flight_town town_arrival"></div>
+                    </div>
+                    <div class="airline">RitAvia</div>
+                    <a th:href="'/tickets/' + ${el.id}"><button th:text="${el.flightCost} + ' Br'" class="button button_dark cost_button"></button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer th:insert="blocks/footer :: footer" class="footer"></footer>
+</div>
+</body>
+</html>

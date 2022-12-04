@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+  <div class="container-fluid">
+    <form th:method="POST" th:action="@{/registration}" th:object="${user}" class="form-floating mx-5">
+      <div class="form-floating m-1">
+        <input type="text" class="form-control" th:field="*{email}" id="email" name="email" placeholder="Email"/>
+        <label for="email">Email</label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">error</div>
+
+      <div class="form-floating m-1">
+        <input type="text" class="form-control" th:field="*{name}" id="name" name="name" placeholder="Name"/>
+        <label for="name">Name</label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">error</div>
+      <div class="form-floating m-1">
+        <input type="text" class="form-control" th:field="*{surname}" id="surname" name="surname" placeholder="Surname"/>
+        <label for="surname">Surname</label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">error</div>
+
+      <div class="form-floating m-1">
+        <input type="date" class="form-control" th:field="*{birthDate}" id="birth_date" name="birth_date" placeholder="Birth date"/>
+        <label for="birth_date">Birth date</label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('birthDate')}" th:errors="*{birthDate}">error</div>
+      <div class="form-floating m-1">
+        <input type="tel" class="form-control" th:field="*{phoneNumber}" id="phone_number" name="phone_number" placeholder="Phone number"/>
+        <label for="phone_number">Phone number</label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">error</div>
+
+      <select name="sex" th:field="*{sex}">
+        <option th:each="sex : ${T(com.aviatickets.aviatickets.models.Sex).values()}"
+                th:value="${sex}" th:text="${sex.name()}"></option>
+      </select>
+
+
+      <div class="form-floating m-1">
+        <input type="password" class="form-control" th:field="*{password}" id="password" name="password" placeholder="Password"/>
+        <label for="password">Password </label>
+      </div>
+      <div class="alert alert-warning" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">error</div>
+      <input type="submit" value="Sign up!" class="btn btn-primary"/>
+    </form>
+  </div>
+</main>
+<footer th:insert="blocks/footer :: footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
+Footer
