@@ -14,7 +14,11 @@
             <input class="nav-link active border-warning" type="submit" value="Logout">
         </form>
 
+        <p th:text="${user.getName()}"></p>
+
         <div th:each="order : ${orders}">
+            <p th:text="${order.getUser().getName()}"></p>
+            <p th:text="${order.getLuggage()?.getLuggageType()}"></p>
             <p th:text="${order.getFlight().getFlightDate()}"></p>
             <p th:text="${order.getPassportIndex()}"></p>
             <hr/>

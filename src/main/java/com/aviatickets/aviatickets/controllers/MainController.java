@@ -52,6 +52,7 @@ public class MainController {
     public String account(Model model, @AuthenticationPrincipal CustomUserDetails userDetails) {
         List<Order> orders = orderService.getAllForCurrentUser(userDetails.getUser().getId());
         model.addAttribute("orders", orders);
+        model.addAttribute("user", userDetails.getUser());
         return "account";
     }
 

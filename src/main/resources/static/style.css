@@ -40,7 +40,7 @@ body {
 
 .button_dark {
   background-color: #132C64;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .button_dark:hover {
   background-color: #061C4D;
@@ -65,9 +65,22 @@ body {
   align-items: center;
 }
 
+.admin_button {
+  margin-top: 10px;
+  width: 185px;
+  height: 44px;
+  font-size: 18px;
+}
+
+.logout_button {
+  margin-left: 10px;
+  width: 80px;
+  height: 38px;
+}
+
 .ticket_form {
   width: 784px;
-  height: 234px;
+  height: 170px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -228,7 +241,26 @@ body {
 .nav_link {
   color: white;
   margin-right: 40px;
-} /*components*/
+}
+
+.wrapper__admin {
+  width: 500px;
+  margin: 20px auto 0;
+}
+
+.form-select-lg {
+  font-size: 1.8rem !important;
+}
+
+.form-control-lg {
+  font-size: 1.8rem !important;
+}
+
+.edit {
+  display: flex;
+}
+
+/*components*/
 .intro {
   height: 84vh;
   display: flex;

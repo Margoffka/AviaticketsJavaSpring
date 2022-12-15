@@ -10,25 +10,25 @@
 </head>
 <body>
 <div class="body_container container__admin">
-    <header class="admin-header"></header>
+    <header th:insert="blocks/header :: header" class="header"></header>
     <main>
-        <div class="container mt-5">
-            <form th:action="@{/admin}" th:method="POST">
-                <input type="date" name="flight_date" placeholder="Enter flight date" class="form-control form-control-lg mb-1">
-                <input type="time" step="2" name="departure_time" placeholder="Enter departure time" class="form-control form-control-lg mb-1">
-                <input type="text" name="departure_from" placeholder="Enter departure from" class="form-control form-control-lg mb-1">
-                <input type="time" step="2" name="arrival_time" placeholder="Enter arrival time" class="form-control form-control-lg mb-1">
-                <input type="text" name="arrival_to" placeholder="Enter arrival to" class="form-control form-control-lg mb-1">
-                <input type="number" step="0.01" name="flight_cost" placeholder="Enter cost" class="form-control form-control-lg mb-1">
-                <select name="aviaCompanyId" id="aviaCompanyId">
+        <div class="wrapper__admin">
+            <form th:action="@{/admin}" th:method="POST" style="text-align: center;">
+                <input required type="date" name="flight_date" placeholder="Enter flight date" class="form-control form-control-lg mb-1">
+                <input required type="text" name="departure_from" placeholder="Enter departure from" class="form-control form-control-lg mb-1">
+                <input required type="time" step="2" name="departure_time" placeholder="Enter departure time" class="form-control form-control-lg mb-1">
+                <input required type="text" name="arrival_to" placeholder="Enter arrival to" class="form-control form-control-lg mb-1">
+                <input required type="time" step="2" name="arrival_time" placeholder="Enter arrival time" class="form-control form-control-lg mb-1">
+                <input required type="number" step="0.01" name="flight_cost" placeholder="Enter cost" class="form-control form-control-lg mb-1">
+                <select required name="aviaCompanyId" id="aviaCompanyId" class="form-select form-select-lg mb-1">
                     <option th:each="company : ${companies}"
                             th:value="${company.getId()}" th:text="${company.getName()}"></option>
                 </select>
-                <button type="submit" class="btn btn-success">Add Flight</button>
+                <button type="submit" class="button button_dark admin_button">Add Flight</button>
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer th:insert="blocks/footer :: footer"></footer>
 </div>
 </body>
 </html>

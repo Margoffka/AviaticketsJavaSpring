@@ -5,7 +5,7 @@
 
 .button_dark {
   background-color: $color-button-dark;
-  color: $color-white;
+  color: $color-white!important;
 
   &:hover {
     background-color: $color-button-hover;
@@ -31,3 +31,18 @@
   align-items: center;
 
 }
+
+.admin_button {
+  margin-top: 10px;
+  width: 185px;
+  height: 44px;
+  font-size: 18px;
+}
+
+.logout_button {
+  margin-left: 10px;
+  width: 80px;
+  height: 38px;
+}
+
+

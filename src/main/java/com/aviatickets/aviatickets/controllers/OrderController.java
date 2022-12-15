@@ -22,11 +22,12 @@ public class OrderController {
 
     @PostMapping("/add/{flightId}")
     public String newOrder(@PathVariable("flightId") Integer flightId, String name, String surname, String passportIndex,
+                           @RequestParam("luggageId") Integer luggageId,
                            @AuthenticationPrincipal CustomUserDetails userDetails) {
 
 
         Integer userId = userDetails.getUser().getId();
-        orderService.createOrder(userId, flightId, name, surname, passportIndex);
+        orderService.createOrder(userId, flightId, name, surname, passportIndex, luggageId);
         return "redirect:/account";
     }
 }

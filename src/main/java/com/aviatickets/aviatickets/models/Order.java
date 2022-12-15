@@ -19,6 +19,10 @@ public class Order {
     @JoinColumn(name = "flight_id", referencedColumnName = "id")
     private Flight flight;
 
+    @ManyToOne
+    @JoinColumn(name="luggage_id", referencedColumnName = "id")
+    private Luggage luggage;
+
 
     private String name;
 
@@ -83,5 +87,13 @@ public class Order {
 
     public void setPassportIndex(String passportIndex) {
         this.passportIndex = passportIndex;
+    }
+
+    public Luggage getLuggage() {
+        return luggage;
+    }
+
+    public void setLuggage(Luggage luggage) {
+        this.luggage = luggage;
     }
 }
