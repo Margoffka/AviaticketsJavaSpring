@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -42,6 +43,9 @@ public class User {
 
     @Column(name = "phone_number")
     private Long phoneNumber;
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
 
     public User() {
     }
@@ -119,5 +123,11 @@ public class User {
         this.role = role;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
 
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }

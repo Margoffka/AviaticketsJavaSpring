@@ -3,6 +3,7 @@ package com.aviatickets.aviatickets.models;
 import javax.persistence.*;
 import java.sql.Time;
 import java.sql.Date;
+import java.util.List;
 
 
 @Entity
@@ -23,6 +24,13 @@ public class Flight {
     private String arrivalTo;
     @Column(name = "flight_cost")
     private Float flightCost;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private Company company;
+
+    @OneToMany(cascade = {CascadeType.REMOVE, CascadeType.MERGE}, mappedBy = "flight", fetch = FetchType.EAGER)
+    private List<Order> orders;
 
     public Flight() {
     }
@@ -93,6 +101,20 @@ public class Flight {
         this.flightCost = flightCost;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
 
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }
 

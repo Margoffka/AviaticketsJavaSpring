@@ -32,6 +32,7 @@ public class SecurityConfig {
 
         return http
                 .authorizeRequests()
+//                .anyRequest().permitAll()
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/orders").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/pizza/new", "/pizza/{id}", "/pizza/{id}/edit").hasRole("ADMIN")

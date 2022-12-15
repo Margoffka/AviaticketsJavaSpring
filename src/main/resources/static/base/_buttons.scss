@@ -1,24 +1,33 @@
 .button {
-    border: none;
-    border-radius: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 .button_dark {
-    background-color: $color-button-dark;
-    color: $color-white;
+  background-color: $color-button-dark;
+  color: $color-white;
 
-    &:hover {
-        background-color: $color-button-hover;
-    }
+  &:hover {
+    background-color: $color-button-hover;
+  }
 }
 
-.account_button {
-    width: 122px;
-    height: 38px;
+.login_button {
+  width: 122px;
+  height: 38px;
 }
 
 .cost_button {
-    width: 242px;
-    height: 74px;
-    font-size: 22px;
+  width: 242px;
+  height: 74px;
+  font-size: 22px;
+}
+
+.account_button {
+  width: 140px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }

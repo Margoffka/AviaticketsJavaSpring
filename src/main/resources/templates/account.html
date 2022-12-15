@@ -1,0 +1,27 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="body_container">
+    <header th:insert="blocks/header :: header" class="header"></header>
+    <main class="main">
+        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" th:method="POST">
+            <input class="nav-link active border-warning" type="submit" value="Logout">
+        </form>
+
+        <div th:each="order : ${orders}">
+            <p th:text="${order.getFlight().getFlightDate()}"></p>
+            <p th:text="${order.getPassportIndex()}"></p>
+            <hr/>
+        </div>
+    </main>
+
+    <footer th:insert="blocks/footer :: footer" class="footer"></footer>
+</div>
+</body>
+</html>

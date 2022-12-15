@@ -4,12 +4,14 @@
             <a href="/"><img src="/assets/logo/Logo.svg" alt=""></a>
         </div>
 <!--        <p sec:authorize="isAuthenticated()">аывфдлаоыфааолфыдаоыфлдаыфоа</p>-->
-        <div sec:authorize="!isAuthenticated()" class="account">
-            <a th:href="'/login'"><button class="button button_dark account_button">Вход</button></a>
+        <div sec:authorize="!isAuthenticated()" class="login">
+            <a th:href="'/login'"><button class="button button_dark login_button">Вход</button></a>
         </div>
         <p sec:authorize="hasRole('ADMIN')">jsalkdfjas;lkfsjdfklsafjsalkdf;sd</p>
-        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" th:method="POST">
-            <input class="nav-link active border-warning" type="submit" value="Logout">
-        </form>
+        <div class="account" sec:authorize="isAuthenticated()">
+            <a th:href="'/account'"><button class="button button_dark account_button">Профиль
+                <img src="/assets/logo/account.svg" alt="" class="account_icon"></button></a>
+        </div>
+
     </div>
 </div>

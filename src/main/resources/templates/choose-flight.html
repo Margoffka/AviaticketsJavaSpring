@@ -13,8 +13,11 @@
         <nav class="wrapper nav__wrapper" th:insert="blocks/fabs :: fabs"></nav>
         <section class="choose">
             <div class="wrapper">
-<!--                <div th:each="el : ${flights}" class="flight_date departure_date">-->
-<!--                </div>-->
+                <!--                <div th:each="el : ${flights}" class="flight_date departure_date">-->
+                <!--                </div>-->
+                <div th:if="${flights.size()==0}">
+                    <p>Нет таких билетов</p>
+                </div>
                 <div th:each="el : ${flights}" class="flight_box">
                     <div th:text="${el.flightDate}" class="flight_date departure_date"></div>
 
@@ -29,8 +32,10 @@
                         <div th:text="${el.arrivalTime}" class="flight_time time_arrival"></div>
                         <div th:text="${el.arrivalTo}" class="flight_town town_arrival"></div>
                     </div>
-                    <div class="airline">RitAvia</div>
-                    <a th:href="'/tickets/' + ${el.id}"><button th:text="${el.flightCost} + ' Br'" class="button button_dark cost_button"></button></a>
+                    <div class="airline" th:text="${el.getCompany().getName()}"></div>
+                    <a th:href="'/tickets/' + ${el.id}">
+                        <button th:text="${el.flightCost} + ' Br'" class="button button_dark cost_button"></button>
+                    </a>
                 </div>
             </div>
         </section>

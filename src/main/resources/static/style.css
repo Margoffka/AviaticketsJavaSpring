@@ -46,7 +46,7 @@ body {
   background-color: #061C4D;
 }
 
-.account_button {
+.login_button {
   width: 122px;
   height: 38px;
 }
@@ -55,6 +55,14 @@ body {
   width: 242px;
   height: 74px;
   font-size: 22px;
+}
+
+.account_button {
+  width: 140px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ticket_form {
@@ -180,6 +188,10 @@ body {
   z-index: 1;
 }
 
+.account_icon {
+  margin-left: 14px;
+}
+
 .footer {
   position: absolute;
   left: 0;
@@ -231,6 +243,9 @@ body {
   background: rgba(255, 224, 245, 0.7);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .choose {
@@ -255,7 +270,7 @@ body {
   margin-top: 28px;
   background-color: #F6CDE9;
   width: 1156px;
-  height: 120px;
+  height: 166px;
   border-radius: 10px;
 }
 .flight_box:last-child {
