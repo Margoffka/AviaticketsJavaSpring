@@ -5,11 +5,11 @@
         </div>
         <div sec:authorize="!isAuthenticated()" class="login">
             <a th:href="'/login'"><button class="button button_dark login_button">Вход</button></a>
+            <a th:href="'/registration'"><button class="button button_dark login_button">Регистрация</button></a>
         </div>
         <div class="edit" sec:authorize="hasRole('ADMIN')">
             <a th:href="'/admin'"><button class="button button_dark account_button">
-            Редактировать</button>
-            </a>
+            Редактировать</button>            </a>
             <form th:action="@{/logout}" th:method="POST">
                 <input class="nav-link active border-warning button button_dark logout_button" type="submit" value="Выйти">
             </form>
@@ -17,7 +17,9 @@
         <div class="account" sec:authorize="hasRole('USER')">
             <a th:href="'/account'"><button class="button button_dark account_button">Профиль
                 <img src="/assets/logo/account.svg" alt="" class="account_icon"></button></a>
+            <form sec:authorize="isAuthenticated()" th:action="@{/logout}" th:method="POST">
+                <input class="nav-link active border-warning button button_dark logout_button" type="submit" value="Выйти">
+            </form>
         </div>
-
     </div>
 </div>

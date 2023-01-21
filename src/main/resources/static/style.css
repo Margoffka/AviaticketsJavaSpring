@@ -78,6 +78,17 @@ body {
   height: 38px;
 }
 
+.sign_in_button {
+  min-width: 188px;
+  height: 38px;
+  margin: 0 65px;
+}
+
+.order_button {
+  min-width: 160px;
+  height: 46px;
+}
+
 .ticket_form {
   width: 784px;
   height: 170px;
@@ -166,6 +177,20 @@ body {
   color: #38486C;
 }
 
+.form-control {
+  padding: 0.5rem 0.75rem;
+}
+
+.form-select-lg {
+  font-size: 1.6rem !important;
+  min-height: calc(1.5em + 2rem + 2px);
+}
+
+.form-control-lg {
+  font-size: 1.6rem !important;
+  min-height: calc(1.5em + 2rem + 2px);
+}
+
 /*layouts*/
 .wrapper {
   margin: 0 auto;
@@ -192,6 +217,15 @@ body {
   align-items: center;
 }
 
+.login__wrapper {
+  position: relative;
+  height: 84vh;
+}
+
+.account__wrapper {
+  width: 800px;
+}
+
 .header {
   position: sticky;
   width: 100%;
@@ -203,6 +237,14 @@ body {
 
 .account_icon {
   margin-left: 14px;
+}
+
+.edit {
+  display: flex;
+}
+
+.account {
+  display: flex;
 }
 
 .footer {
@@ -248,16 +290,20 @@ body {
   margin: 20px auto 0;
 }
 
-.form-select-lg {
-  font-size: 1.8rem !important;
+.login__box {
+  padding: 20px 10px;
+  width: 400px;
+  min-height: 255px;
+  background: rgba(255, 224, 245, 0.7);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  position: absolute;
+  left: 34%;
+  top: 8.5%;
 }
 
-.form-control-lg {
-  font-size: 1.8rem !important;
-}
-
-.edit {
-  display: flex;
+.login__h1 {
+  text-align: center;
 }
 
 /*components*/
@@ -332,6 +378,47 @@ body {
 .airline {
   color: #132C64;
   font-size: 22px;
+}
+
+.two_column_model {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.personal_data__container {
+  padding: 20px 50px;
+  border: 1px solid #132C64;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.view__content {
+  border: 1px solid #132C64;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.text_group {
+  margin-right: 10px;
+}
+
+.ticket__container {
+  background-color: rgba(197, 215, 255, 0.55);
+  padding: 20px 50px;
+  border: 1px solid #132C64;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.town_group {
+  display: flex;
+}
+
+.arrow {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

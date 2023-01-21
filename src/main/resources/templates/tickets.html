@@ -17,10 +17,10 @@
         <nav class="wrapper nav__wrapper" th:insert="blocks/fabs :: fabs"></nav>
         <section class="choose">
             <div class="wrapper">
-                <div class="flight_date departure_date">
-                    <div th:text="${flight.flightDate}"></div>
-                </div>
                 <div class="flight_box">
+                    <div class="flight_date departure_date">
+                        <div th:text="${flight.flightDate}"></div>
+                    </div>
                     <div class="time_town time_town_departure">
                         <div th:text="${flight.departureTime}" class="flight_time time_departure"></div>
                         <div th:text="${flight.departureFrom}" class="flight_town town_departure"></div>
@@ -39,28 +39,29 @@
         </section>
         <section class="passenger_info">
             <div class="wrapper">
+                <h2>Введите данные пассажира:</h2>
                 <form th:action="@{/orders/add/{flightId}(flightId = ${flight.getId()})}" th:method="POST"
                       class="form-floating">
                     <div class="form-floating m-1">
-                        <input type="text" th:value="${name}" required name="name" id="name" class="form-control"
-                               placeholder="Name">
-                        <label for="name">Name</label>
+                        <input type="text" th:value="${name}" required name="name" id="name" class="form-control form-control-lg mb-1"
+                               placeholder="Имя">
+                        <label for="name">Имя</label>
                     </div>
                     <div class="form-floating m-1">
                         <input type="text" th:value="${surname}" required name="surname" id="surname"
-                               class="form-control" placeholder="Surname">
-                        <label for="surname">Surname</label>
+                               class="form-control form-control-lg mb-1" placeholder="Фамилия">
+                        <label for="surname">Фамилия</label>
                     </div>
                     <div class="form-floating m-1">
-                        <input type="text" required name="passportIndex" id="passportIndex" class="form-control"
-                               placeholder="Passport Index">
-                        <label for="passportIndex">Passport Index</label>
+                        <input type="text" required name="passportIndex" id="passportIndex" class="form-control form-control-lg mb-1"
+                               placeholder="Номер паспорта">
+                        <label for="passportIndex">Номер паспорта</label>
                     </div>
                     <select required name="luggageId" id="luggageId" class="form-select form-select-lg mb-1">
                         <option th:each="type : ${luggageTypes}"
                                 th:value="${type.getId()}" th:text="${type.getLuggageType()}"></option>
                     </select>
-                    <input type="submit" value="Order" class="btn btn-primary">
+                    <input type="submit" value="Забронировать" class="button button_dark order_button">
 
                 </form>
                 <div th:action="@{/orders/add/{flightId}(flightId = ${flight.getId()})}">

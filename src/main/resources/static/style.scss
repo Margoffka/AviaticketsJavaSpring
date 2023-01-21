@@ -7,6 +7,7 @@
 @import "base/base";
 @import "base/buttons";
 @import "base/forms";
+@import "base/bootstrap";
 
 /*layouts*/
 @import "layouts/wrapper";
@@ -14,7 +15,9 @@
 @import "layouts/footer";
 @import "layouts/navigation";
 @import "layouts/admin";
+@import "layouts/login";
 
 /*components*/
 @import "components/intro";
 @import "components/choose";
+@import "components/account";
